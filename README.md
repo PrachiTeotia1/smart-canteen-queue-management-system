@@ -8,3 +8,5 @@ v0.1.0
 Status
 
 🟢 Sprint 0 - Planning
+
+v0.1.0 → Project Setup
