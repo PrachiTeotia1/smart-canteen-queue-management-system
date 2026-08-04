@@ -1,0 +1,79 @@
+                                   USERS
+┌─────────────────────────────────────────────────────┐
+│ PK id                                               │
+│ name                                                │
+│ email (UNIQUE)                                      │
+│ password                                            │
+│ phone                                               │
+│ role (STUDENT | STAFF | ADMIN)                      │
+│ created_at                                          │
+│ updated_at                                          │
+└─────────────────────────────────────────────────────┘
+                    │
+          1         │         N
+                    ▼
+                                   ORDERS
+┌─────────────────────────────────────────────────────┐
+│ PK id                                               │
+│ FK user_id                                          │
+│ status                                              │
+│ total_amount                                        │
+│ payment_status                                      │
+│ created_at                                          │
+│ updated_at                                          │
+└─────────────────────────────────────────────────────┘
+        │ 1                           │ 1
+        │                             │
+        ▼                             ▼
+ORDER_ITEMS                      QUEUE
+┌──────────────────────┐    ┌─────────────────────────┐
+│ PK id                │    │ PK id                   │
+│ FK order_id          │    │ FK order_id (UNIQUE)    │
+│ FK menu_item_id      │    │ queue_number            │
+│ quantity             │    │ estimated_wait_time     │
+│ price                │    │ status                  │
+│ subtotal             │    │ joined_at               │
+└──────────────────────┘    │ completed_at            │
+        ▲                   └─────────────────────────┘
+        │
+        │ N
+        │
+        │ 1
+┌─────────────────────────────────────────────────────┐
+│ MENU_ITEMS                                          │
+│ PK id                                               │
+│ FK category_id                                      │
+│ name                                                │
+│ description                                         │
+│ price                                               │
+│ image_url                                           │
+│ is_available                                        │
+│ preparation_time                                    │
+└─────────────────────────────────────────────────────┘
+                    ▲
+                    │
+                    │ N
+                    │
+                    │ 1
+┌─────────────────────────────────────────────────────┐
+│ CATEGORIES                                          │
+│ PK id                                               │
+│ name                                                │
+│ description                                         │
+│ is_active                                           │
+└─────────────────────────────────────────────────────┘
+
+USERS
+  │
+  │1
+  │
+  ▼
+NOTIFICATIONS
+┌─────────────────────────────────────────────────────┐
+│ PK id                                               │
+│ FK user_id                                          │
+│ title                                               │
+│ message                                             │
+│ is_read                                             │
+│ created_at                                          │
+└─────────────────────────────────────────────────────┘
