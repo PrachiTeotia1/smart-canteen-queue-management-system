@@ -8,7 +8,7 @@ import { AppShell } from "./components/layout/AppShell/AppShell";
 import { Home } from "./pages/Home/Home";
 import { Menu } from "./pages/Menu/Menu";
 import StyleGuide from "./pages/StyleGuide/StyleGuide";
-
+import { Queue } from "./pages/Queue/Queue";
 function ComingSoonPage({ title }: { title: string }) {
   return (
     <div className="flex min-h-[60vh] items-center justify-center">
@@ -37,10 +37,7 @@ function App() {
             path="/style-guide"
             element={<StyleGuide />}
           />
-          <Route
-            path="/queue"
-            element={<ComingSoonPage title="Queue" />}
-          />
+          <Route path="/queue" element={<Queue />} />
 
           <Route
             path="/orders"
