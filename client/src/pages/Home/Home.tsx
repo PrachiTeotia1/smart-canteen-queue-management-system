@@ -146,20 +146,21 @@ export function Home() {
         </div>
         </section>
         {/* Current Queue */}
-<section>
-  <div className="mb-4">
-    <Typography variant="h3">
-      Your queue
-    </Typography>
-  </div>
+        <section>
+        <div className="mb-4">
+            <Typography variant="h3">
+            Your queue
+            </Typography>
+        </div>
 
-  <QueueStatus
-    queueNumber="A-102"
-    peopleAhead={7}
-    estimatedWait={12}
-    status="preparing"
-  />
-</section>
+        <QueueStatus
+            queueNumber="A-102"
+            peopleAhead={7}
+            estimatedWait={12}
+            status="preparing"
+            progress={0.5}
+        />
+        </section>
     </div>
   );
 }
